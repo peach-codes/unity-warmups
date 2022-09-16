@@ -53,6 +53,9 @@ public readonly struct SmallXXHash4 {
         this.accumulator = accumulator;
     }
 
+    public static SmallXXHash4 operator + (SmallXXHash4 h, int v) =>
+        h.accumulator + (uint)v;
+
     public static implicit operator SmallXXHash4 (uint4 accumulator) => new SmallXXHash4(accumulator);
 
     public SmallXXHash4 Eat( int4 data) =>
